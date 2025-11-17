@@ -1,0 +1,108 @@
+h1 {
+  color: #70d7ff;
+  font-size: 4rem;
+}
+.deuxieme-mot {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.deuxieme-mot {
+  color: white;
+  font-size: 2.5rem;
+}
+.premier-mot2 {
+  color: white;
+  margin-right: 1%;
+  font-size: 2rem;
+}
+
+.carte {
+  box-shadow: 0px 0px 80px rgba(0, 255, 255, 0.95);
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.carte2 {
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.95);
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.carte-inner {
+  /* position: relative; */
+  /* transition: transform 0.6s; */
+  /* OU */
+  /* transition-duration: 0.6s; */
+  width: 100%;
+  height: 100%;
+  /* transform-style: preserve-3d; */
+}
+
+/* .carte-inner.est-retournee {
+  transform: rotateY(180deg);
+} */
+
+.carte-verso {
+  background-color: rgb(121, 222, 255);
+  /* transform: rotateY(180deg); */
+}
+
+.carte-recto {
+  background-color: white;
+  border: 2px solid #eee;
+}
+
+.carte-verso,
+.carte-recto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.circle {
+  margin-top: 10%;
+}
+
+h2 {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+  text-align: center;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(0, 127, 150));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.material-symbols-outlined {
+  color: #70d7ff;
+  font-size: 5rem;
+}
+
+h3 {
+  color: rgb(255, 255, 255);
+}
+
+h4 {
+  color: black;
+}
+
+h3:hover {
+  color: #70d7ff;
+}
+
+/* .material-symbols-outlined:hover {
+    color: #70d7ff;
+} */
