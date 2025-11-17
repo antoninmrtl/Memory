@@ -19,18 +19,30 @@
   </head>
   <body>
     <main>
-      <model-viewer
-        src="/assets/models/sphere_curve_567.glb"
-        autoplay
-        auto-rotate
-      ></model-viewer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-xl-12">
+            <!-- gère le modele comme un block grâce à d-block donc facile pour centrer avec bootstrap -->
+            <model-viewer
+              class="d-block mx-auto"
+              src="/assets/models/sphere_curve_567.glb"
+              autoplay
+              auto-rotate
+            ></model-viewer>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <h2>Welcome to</h2>
       <div class="glow">
-        <h1>Mymo</h1>
+        <h1 class="neon">Mymo</h1>
       </div>
       <p><a href="/pages/accueil.html">play</a></p>
     </footer>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
   </body>
 </html>
