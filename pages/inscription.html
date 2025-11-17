@@ -25,64 +25,64 @@
               <fieldset>
                 <form action="#" method="post">
                   <h3>Create an account</h3>
-                  <label for="username" class="col-xs-12 col-md-12 col-xl-12"
-                    >Username* :</label
-                  >
-                  <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    required
-                    placeholder="Antonin"
-                    pattern="[A-Za-z]{3,}"
-                    title="Saisissez votre prènom (3 caractères minimum.)"
-                  />
+                  <div class="centre">
+                    <label for="username">Username* :</label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      required
+                      placeholder="Antonin"
+                      pattern="[A-Za-z]{3,}"
+                      title="Saisissez votre prènom (3 caractères minimum.)"
+                    />
+                  </div>
                   <br />
+
+                  <div class="centre">
+                    <label for="email" class="from-control">Email* :</label>
+                    <input
+                      required
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Mymo@mail.com"
+                      title="Saisissez votre adresse email"
+                    />
+                  </div>
                   <br />
-                  <label for="email" class="col-xs-12 col-md-12 col-xl-12"
-                    >Email* :</label
-                  >
-                  <input
-                    required
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Mymo@mail.com"
-                    title="Saisissez votre adresse email"
-                  />
-                  <br />
-                  <br />
-                  <label for="mdp" class="col-xs-12 col-md-12 col-xl-12"
-                    >Mot de passe* :</label
-                  >
-                  <input
-                    type="password"
-                    id="mdp"
-                    name="mdp"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Saisissez un mot de passe de minimum 8 caractères 
+
+                  <div class="centre">
+                    <label for="mdp">Mot de passe* :</label>
+                    <input
+                      type="password"
+                      id="mdp"
+                      name="mdp"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                      title="Saisissez un mot de passe de minimum 8 caractères 
         comportant des lettres minuscules et majuscules et des chiffres"
-                  />
+                    />
+                  </div>
                   <br />
-                  <br />
-                  <label for="mdp2" class="col-xs-12 col-md-12 col-xl-12"
-                    >Confiramtion Mot de passe* :</label
-                  >
-                  <input
-                    type="password"
-                    id="mdp2"
-                    name="mdp2"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Retaper votre mot de passe "
-                  />
+
+                  <div class="centre">
+                    <label for="mdp2">Confiramtion Mot de passe* :</label>
+                    <input
+                      type="password"
+                      id="mdp2"
+                      name="mdp2"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                      title="Retaper votre mot de passe "
+                    />
+                  </div>
                 </form>
+
                 <h5>* : obligatoire</h5>
                 <section class="d-flex justify-content-around">
                   <button type="submit" class="btn btn-success">submit</button>
                   <button type="reset" class="btn btn-danger">reset</button>
                 </section>
               </fieldset>
-              <br />
               <br />
             </section>
           </div>
