@@ -3,8 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/inscription.css" />
     <title>Mymo inscription</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Sing up</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-6 col-lg-6">
+            <section class="formulaire">
+              <fieldset>
+                <form action="#" method="post">
+                  <h3>create an account</h3>
+                  <label for="username">Username :*</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    placeholder="Antonin"
+                    pattern="[A-Za-z]{3,}"
+                    title="Saisissez votre prènom (3 caractères minimum.)"
+                  />
+                  <br />
+                  <br />
+                  <label for="email">Email :*</label>
+                  <input
+                    required
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Mymo@mail.com"
+                    title="Saisissez votre adresse email"
+                  />
+                  <br />
+                  <br />
+                  <label for="mdp">Mot de passe :*</label>
+                  <input
+                    type="password"
+                    id="mdp"
+                    name="mdp"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Saisissez un mot de passe de minimum 8 caractères 
+        comportant des lettres minuscules et majuscules et des chiffres"
+                  />
+                  <br />
+                  <br />
+                  <label for="mdp2">Confiramtion Mot de passe :*</label>
+                  <input
+                    type="password"
+                    id="mdp2"
+                    name="mdp2"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Retaper votre mot de passe "
+                  />
+                </form>
+                <h5>* : obligatoire</h5>
+                <section>
+                  <button type="submit" class="btn btn-success">
+                    Enregistrer avec un bouton
+                  </button>
+                  <!-- <button type="reset">Effacer avec un bouton</button> -->
+                </section>
+              </fieldset>
+              <br />
+              <br />
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <ul class="d-flex justify-content-around">
+        <a class="mentions" href="/pages/mentions.html"> Mentions mégales</a>
+        <a class="logo" href="/pages/index.html">Mymo</a>
+        <a class="politiques" href="/pages/politiques.html"
+          >Politique de confidentialité</a
+        >
+      </ul>
+    </footer>
+  </body>
 </html>
