@@ -3,18 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="index.css" />
+    <meta
+      name="description"
+      content="Ma première page qui envoir vers la page d'acceuil"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
     <title>MYMO</title>
   </head>
   <body>
-    <header>
-      <h1>test</h1>
-    </header>
-    <main></main>
+    <main>
+      <model-viewer
+        src="/assets/models/sphere_curve_567.glb"
+        autoplay
+        auto-rotate
+      ></model-viewer>
+    </main>
     <footer>
       <h2>Welcome to</h2>
-      <h1>Mymo</h1>
+      <div class="glow">
+        <h1>Mymo</h1>
+      </div>
+      <p><a href="/pages/accueil.html">play</a></p>
     </footer>
   </body>
 </html>
