@@ -1,3 +1,31 @@
+/* Importation des mes deux fonts dans mon style.css (c'est mon style global de toutes mes pages)  */
+@font-face {
+  font-family: hubbali;
+  src: url("/assets/fonts/Hubballi-Regular.ttf");
+}
+@font-face {
+  font-family: grotesque;
+  src: url("/assets/fonts/DarkerGrotesque-Light.ttf");
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-family: hubbali;
+  font-weight: lighter;
+}
+
+h2,
+p,
+a {
+  font-family: grotesque;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
