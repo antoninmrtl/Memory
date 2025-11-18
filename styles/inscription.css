@@ -28,7 +28,11 @@ h5 {
 }
 
 label {
+  text-align: center;
   margin-bottom: 2%;
+}
+#mdp {
+  width: 90%;
 }
 
 .btn-success,
