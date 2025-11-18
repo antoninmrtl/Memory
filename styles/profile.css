@@ -7,6 +7,10 @@
   box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
 }
 
+main {
+  margin-top: 5%;
+}
+
 .choix {
   margin-bottom: 2rem;
   height: 16.5rem;
@@ -15,10 +19,6 @@
   -webkit-box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
   -moz-box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
   box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
-}
-
-ul {
-  margin-bottom: 5%;
 }
 
 .centre {
@@ -36,6 +36,13 @@ ul {
   margin: 2%;
   width: 70%;
   border-radius: 20px;
+}
+
+.btn-success {
+  width: 30%;
+  border-radius: 30px;
+  background-color: transparent;
+  border: solid green 2px;
 }
 
 .label1 {

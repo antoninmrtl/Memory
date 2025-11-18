@@ -10,6 +10,10 @@ h2 {
   margin: 0;
 }
 
+.navlien {
+  font-size: 3rem;
+}
+
 h1 {
   text-align: center;
   font-size: 6rem;
