@@ -1,20 +1,24 @@
 .carte {
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.95);
-  width: 175px;
-  height: 175px;
+  width: 8rem;
+  height: 8rem;
   margin-bottom: 15%;
   border-radius: 100%;
   perspective: 1000px;
 
   background-color: transparent;
 }
+.circle {
+  margin: 0;
+}
 
 .maborder {
-  /* background-color: aliceblue; */
-  border: #000000 solid 1px;
-  padding: 2%;
-  border-radius: 40px;
-  box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
+  width: 65%;
+  margin: 2% auto;
+  border: rgba(21, 181, 245, 1) solid 1px;
+  padding: 1%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 43px 21px rgba(21, 181, 245, 0.72);
 }
 
 .carte-inner {
@@ -53,15 +57,19 @@
   backface-visibility: hidden;
 }
 
-.circle {
-  margin-top: 10%;
-}
-
 .material-symbols-outlined {
   color: #70d7ff;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .profile-circle {
   color: white;
+}
+
+.btn-danger {
+  margin-top: 3%;
+  width: 20%;
+  border-radius: 30px;
+  background-color: transparent;
+  border: solid red 2px;
 }
