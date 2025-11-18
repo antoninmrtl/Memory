@@ -1,21 +1,34 @@
 .bienvenue {
   margin-top: 2%;
-  text-align: center;
+  margin-left: 5%;
   text-transform: uppercase;
 }
 
 h2 {
-  text-align: center;
   font-size: 5rem;
   margin: 0;
 }
 
 .navlien {
+  display: inline-block;
   font-size: 3rem;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.ligne {
+  border: outset white 0.2px;
+  box-shadow: 0px 0px 283px 121px rgba(21, 181, 245, 0.72);
+  margin-bottom: 1%;
 }
 
 h1 {
-  text-align: center;
   font-size: 6rem;
 }
 
