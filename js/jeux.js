@@ -8,8 +8,8 @@ const cartes = document.querySelectorAll(".carte");
 //   carte_inner.classList.toggle("est-retournee");
 // });
 
-let premiereCarteRetournee = null; // Notre nouvelle variable
-let jeuVerrouille = false; // Une variable pour bloquer les clics
+let premiereCarteRetournee = null;
+let jeuVerrouille = false;
 
 cartes.forEach((carte) =>
   carte.addEventListener("click", () => {
@@ -37,3 +37,21 @@ cartes.forEach((carte) =>
     }
   })
 );
+
+const boutonRestart = document.querySelector(".btn-danger");
+boutonRestart.addEventListener("click", function () {
+  window.location.reload();
+});
+
+document.addEventListener("keyup", function (e) {
+  if (e.code === "Space" || e.key === " ") {
+    console.log("Barre espace détectée ! Redémarrage...");
+    // HTMLFormElement.reset();
+    //simule le clique
+    const boutonRestart = document.querySelector(".btn-danger");
+    if (boutonRestart) {
+      boutonRestart.click();
+      window.location.reload();
+    }
+  }
+});
