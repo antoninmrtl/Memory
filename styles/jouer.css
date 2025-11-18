@@ -88,6 +88,12 @@ h4 {
   background-color: red;
 }
 
+#coup {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
 @media screen and (max-width: 770px) {
   h1,
   h2,

@@ -11,6 +11,7 @@ const cartes = Array.from(nodeList);
 
 let premiereCarteRetournee = null;
 let jeuVerrouille = false;
+let compteur = 0;
 
 cartes.forEach((carte) =>
   carte.addEventListener("click", (e) => {
@@ -18,6 +19,12 @@ cartes.forEach((carte) =>
       console.log("CLIC IGNORÉ : Le jeu est verrouillé.");
       return;
     }
+    //compteur pour les shots
+    compteur++;
+    console.log(compteur);
+    let shot = document.getElementById("coup");
+    shot.innerHTML = "<h3>Shots :</h3>&nbsp;&nbsp;&nbsp;" + compteur;
+
     if (cartes.length)
       if (premiereCarteRetournee == null) {
         premiereCarteRetournee = carte;
