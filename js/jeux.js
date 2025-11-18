@@ -12,6 +12,22 @@ const cartes = Array.from(nodeList);
 let premiereCarteRetournee = null;
 let jeuVerrouille = false;
 let compteur = 0;
+let secondes = 0;
+let minutes = 0;
+idinterval = null;
+
+function chronometre() {
+  let chrono = document.getElementById("temps");
+  secondes++;
+  console.log(secondes);
+  if (secondes == 60) {
+    minutes++;
+    console.log(minutes);
+    secondes = 0;
+  }
+  chrono.innerHTML =
+    "<h3>Time :</h3>&nbsp;&nbsp;&nbsp;" + minutes + ":" + secondes;
+}
 
 cartes.forEach((carte) =>
   carte.addEventListener("click", (e) => {
@@ -24,6 +40,10 @@ cartes.forEach((carte) =>
     console.log(compteur);
     let shot = document.getElementById("coup");
     shot.innerHTML = "<h3>Shots :</h3>&nbsp;&nbsp;&nbsp;" + compteur;
+
+    if (idinterval === null) {
+      idinterval = setInterval(chronometre, 1000);
+    }
 
     if (cartes.length)
       if (premiereCarteRetournee == null) {
