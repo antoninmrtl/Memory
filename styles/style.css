@@ -78,6 +78,14 @@ ul {
   padding: 0%;
 }
 
+li {
+  list-style-type: none;
+  margin: 3%;
+}
+
+nav {
+  text-align: center;
+}
 @media screen and (max-width: 640px) {
   h2 {
     text-align: center;
@@ -96,4 +104,18 @@ ul {
   .politiques {
     font-size: 1rem;
   }
+}
+
+@media screen and (max-width: 740px) {
+  a {
+    font-size: 1.5rem;
+  }
+  .navlien {
+    font-size: 2rem;
+  }
+}
+
+#en-cours {
+  text-shadow: 0 0 5px #71eeff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px rgb(91, 255, 255), 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
 }
