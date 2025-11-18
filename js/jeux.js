@@ -24,6 +24,7 @@ cartes.forEach((carte) =>
       if (premiereCarteRetournee.dataset.paire === carte.dataset.paire) {
         premiereCarteRetournee = null;
         jeuVerrouille = false;
+        fixe();
       } else {
         setTimeout(() => {
           carte_inner.classList.remove("est-retournee");
@@ -37,6 +38,11 @@ cartes.forEach((carte) =>
     }
   })
 );
+
+function fixe(event) {
+  console.log("Découvert");
+  event.preventDefault();
+}
 
 const boutonRestart = document.querySelector(".btn-danger");
 boutonRestart.addEventListener("click", function () {
