@@ -35,9 +35,9 @@ a {
 a {
   text-decoration: none;
   color: white;
-  margin-left: 5%;
-  margin-right: 5%;
-  font-size: 2.5rem;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 2rem;
 }
 
 footer {
@@ -72,4 +72,28 @@ a:hover {
 .profile-circle {
   margin-top: 1%;
   font-size: 2.5rem;
+}
+
+ul {
+  padding: 0%;
+}
+
+@media screen and (max-width: 640px) {
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 4em;
+  }
+
+  .mentions {
+    font-size: 1rem;
+  }
+  .politiques {
+    font-size: 1rem;
+  }
 }

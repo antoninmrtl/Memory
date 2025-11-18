@@ -30,10 +30,34 @@ p {
   text-transform: lowercase;
   font-size: 1.5rem;
   padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 2%;
   color: #70d7ff;
 }
 
 .size {
   font-size: 3rem;
+}
+
+@media screen and (max-width: 640px) {
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+  }
+  p {
+    text-align: center;
+    font-size: 1em;
+    margin: 7%;
+  }
+  .size {
+    margin-top: 15%;
+    font-size: 2rem;
+  }
 }

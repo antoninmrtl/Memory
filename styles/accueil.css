@@ -9,19 +9,35 @@ nav {
 }
 
 h2 {
+  text-align: center;
   font-size: 5rem;
   margin: 0;
 }
 
 h1 {
+  text-align: center;
   font-size: 6rem;
-  margin: 0;
-  margin-left: 1%;
-  color: #70d7ff;
-  letter-spacing: 1.5rem;
 }
 
 li {
   list-style-type: none;
   margin: 3%;
+}
+
+@media screen and (max-width: 640px) {
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 4em;
+  }
+
+  .selection {
+    margin-top: 15%;
+    text-align: center;
+  }
 }
