@@ -19,10 +19,10 @@ let myinput = document.getElementById("mdp");
 let patternmaj = "(?=.*[A-Z])";
 let patternmin = "(?=.*[a-z])";
 let patternnbr = "(?=.*[0-9])";
-let patternlongueur = "(?=.*.{8,})";
+let patternlongueur = "(?=.*.{6,})";
 let patternusername = "(?=.*.{3,})";
 let patternsymbole = "(?=.*[^a-zA-Z0-9])";
-let tout = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*.{8,})(?=.*[^a-zA-Z0-9])";
+let tout = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*.{6,})(?=.*[^a-zA-Z0-9])";
 let les2mdps = false;
 let mdpFort = false;
 let mailBon = false;
@@ -124,7 +124,7 @@ function enrengistrerMdp() {
   console.log("email enregistré : " + mail);
   console.log("mot de passe enregistré : " + password);
   console.log("mot de passe enregistré : " + username);
-  document.location.href = "../pages/accueil.html";
+  document.location.href = "../pages/connection.html";
 }
 
 function verifmail() {
