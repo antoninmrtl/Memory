@@ -85,10 +85,10 @@ h4 {
 }
 
 .est-retournee {
-  background-color: red;
 }
 
-#coup {
+#coup,
+#temps {
   display: flex;
   justify-content: center;
   font-size: 1.8rem;

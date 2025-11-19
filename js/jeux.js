@@ -2,12 +2,15 @@
 
 const nodeList = document.querySelectorAll(".carte");
 const cartes = Array.from(nodeList);
-// const carte = document.querySelector(".carte");
 
-// carte.addEventListener("click", () => {
-//   const carte_inner = document.querySelector(".carte-inner");
-//   carte_inner.classList.toggle("est-retournee");
-// });
+let imageCss = [
+  "/assets/images/image_css/align_items_stretch.png",
+  "/assets/images/image_css/align_flex_end.png",
+  "/assets/images/image_css/align_flex_start.png",
+  "/assets/images/image_css/code_blocks.png",
+  "/assets/images/image_css/css.png",
+  "/assets/images/image_css/flex_no_wrap.png",
+];
 
 let premiereCarteRetournee = null;
 let jeuVerrouille = false;
@@ -16,6 +19,19 @@ let secondes = 0;
 let minutes = 0;
 let stockage = [];
 idinterval = null;
+
+let tableauJeu = imageCss.concat(imageCss);
+tableauJeu.sort(() => 0.5 - Math.random());
+
+for (let i = 0; i < cartes.length; i++) {
+  let carte = cartes[i];
+  let img = carte.querySelector(".carte-verso img");
+
+  if (img) {
+    img.src = tableauJeu[i];
+    carte.dataset.paire = tableauJeu[i];
+  }
+}
 
 function chronometre() {
   let chrono = document.getElementById("temps");
@@ -88,6 +104,7 @@ cartes.forEach((carte) =>
 
         if (cartesRetournees.length === cartes.length) {
           console.log("Victoire ! Toutes les cartes sont retournées !");
+          clearInterval(idinterval);
         }
       } else {
         setTimeout(() => {
