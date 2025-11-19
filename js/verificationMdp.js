@@ -6,7 +6,12 @@ let nbr = document.getElementById("Chiffre");
 let longueur = document.getElementById("caractere");
 let bouton = document.getElementById("monbouton");
 let confirme = document.getElementById("mdp2");
+let user = document.getElementById("username");
+let mail = document.getElementById("email");
+let myMessageerreur = document.getElementById("message");
 
+let myinputUser = document.getElementById("username");
+let myinputMail = document.getElementById("email");
 let myinput = document.getElementById("mdp");
 let patternmaj = "(?=.*[A-Z])";
 let patternmin = "(?=.*[a-z])";
@@ -15,7 +20,9 @@ let patternlongueur = "(?=.*.{8,})";
 let tout = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*.{8,})";
 let les2mdps = false;
 let mdpFort = false;
+let mailBon = false;
 
+bouton.addEventListener("click", enrengistrerMdp);
 myinput.addEventListener("keyup", verifMdp);
 mdp2.addEventListener("keyup", confirmMdp);
 
@@ -58,11 +65,6 @@ function verifMdp() {
     longueur.classList.remove("succed");
     longueur.classList.add("nosucced");
   }
-  // if (myinput.value.match(tout) && les2mdps) {
-  //   bouton.removeAttribute("disabled");
-  // } else {
-  //   bouton.setAttribute("disabled", "disabled");
-  // }
   if (myinput.value.match(tout)) {
     mdpFort = true;
   } else {
@@ -80,10 +82,35 @@ function confirmMdp() {
 }
 
 function activerBouton() {
-  if (mdpFort && les2mdps) {
+  verifmail();
+  if (mdpFort && les2mdps && mailBon) {
     bouton.removeAttribute("disabled");
   } else {
     bouton.setAttribute("disabled", "disabled");
   }
 }
 setInterval(activerBouton, 100);
+
+function enrengistrerMdp() {
+  localStorage.setItem("Username", myinputUser.value);
+  localStorage.setItem("email", myinputMail.value);
+  localStorage.setItem("Password", myinput.value);
+
+  let username = localStorage.getItem("Username");
+  let mail = localStorage.getItem("email");
+  let password = localStorage.getItem("mdp");
+  console.log("email enregistré : " + mail);
+  console.log("mot de passe enregistré : " + password);
+  console.log("mot de passe enregistré : " + username);
+  document.location.href = "../pages/accueil.html";
+}
+
+function verifmail() {
+  if (myinputMail.value.includes("@") && myinputMail.value.includes(".com")) {
+    mailBon = true;
+    myMessageerreur.innerHTML = "";
+  } else {
+    mailBon = false;
+    myMessageerreur.innerHTML = "Email non valide";
+  }
+}
