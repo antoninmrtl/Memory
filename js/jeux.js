@@ -131,6 +131,19 @@ cartes.forEach((carte) =>
         if (cartesRetournees.length === cartes.length) {
           console.log("Victoire ! Toutes les cartes sont retournées !");
           setTimeout(() => {
+            let resultCompteur = compteur;
+            let resultMinutes = minutes;
+            let resultSecondes = secondes;
+            let shotResult = document.getElementById("coup2");
+            let timeResult = document.getElementById("temps2");
+            timeResult.innerHTML =
+              "<h3>Time :</h3>&nbsp;&nbsp;&nbsp;" +
+              resultMinutes +
+              ":" +
+              resultSecondes;
+            shotResult.innerHTML =
+              "<h3>Shots :</h3>&nbsp;&nbsp;&nbsp;" + resultCompteur;
+            console.log("Victoire ! Toutes les cartes sont retournées !");
             myModal.show();
           }, 1500);
           clearInterval(idinterval);
@@ -148,20 +161,6 @@ cartes.forEach((carte) =>
     }
   })
 );
-
-// function victoire() {
-//   const cartesRetournees = cartes.filter((carte) =>
-//     carte.classList.contains("est-retournee")
-//   );
-//   if (cartesRetournees.length === cartes.length) {
-//     console.log("Victoire ! Toutes les cartes sont retournées !");
-//   }
-// }
-
-function fixe(event) {
-  console.log("Découvert");
-  event.preventDefault();
-}
 
 const boutonRestart = document.querySelector(".btn-danger");
 boutonRestart.addEventListener("click", function () {
