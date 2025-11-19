@@ -14,6 +14,7 @@ let jeuVerrouille = false;
 let compteur = 0;
 let secondes = 0;
 let minutes = 0;
+let stockage = [];
 idinterval = null;
 
 function chronometre() {
@@ -45,39 +46,60 @@ cartes.forEach((carte) =>
       idinterval = setInterval(chronometre, 1000);
     }
 
-    if (cartes.length)
-      if (premiereCarteRetournee == null) {
-        premiereCarteRetournee = carte;
-        const carte_inner2 = carte.querySelector(".carte-inner");
-        carte_inner2.classList.toggle("est-retournee");
-      } else {
-        const carte_inner = carte.querySelector(".carte-inner");
-        carte_inner.classList.toggle("est-retournee");
+    if (premiereCarteRetournee == null) {
+      premiereCarteRetournee = carte;
+      const carte_inner2 = carte.querySelector(".carte-inner");
+      carte_inner2.classList.toggle("est-retournee");
+    } else {
+      if (
+        stockage.includes(
+          premiereCarteRetournee.dataset.paire || carte.dataset.paire
+        )
+      ) {
         jeuVerrouille = true;
-        if (premiereCarteRetournee.dataset.paire === carte.dataset.paire) {
+      }
+      const carte_inner = carte.querySelector(".carte-inner");
+      carte_inner.classList.toggle("est-retournee");
+      jeuVerrouille = true;
+      if (premiereCarteRetournee.dataset.paire === carte.dataset.paire) {
+        // console.log(premiereCarteRetournee.dataset.paire);
+        //je bloque le click si la carte est déja troouvé et donc retourné avec le css "pointer-events:none"
+        premiereCarteRetournee.classList.toggle("bloque-clic");
+        carte.classList.toggle("bloque-clic");
+        if (stockage.includes(premiereCarteRetournee)) {
+          console.log("Déja retourné");
+        } else {
+          stockage.push(premiereCarteRetournee);
+        }
+        if (stockage.includes(carte)) {
+          console.log("Déja retourné");
+        } else {
+          stockage.push(carte);
+        }
+        console.log(stockage);
+        premiereCarteRetournee = null;
+        jeuVerrouille = false;
+
+        const cartesRetournees = cartes.filter((carte) =>
+          carte
+            .querySelector(".carte-inner")
+            .classList.contains("est-retournee")
+        );
+
+        if (cartesRetournees.length === cartes.length) {
+          console.log("Victoire ! Toutes les cartes sont retournées !");
+        }
+      } else {
+        setTimeout(() => {
+          carte_inner.classList.remove("est-retournee");
+          premiereCarteRetournee
+            .querySelector(".carte-inner")
+            .classList.remove("est-retournee");
           premiereCarteRetournee = null;
           jeuVerrouille = false;
-
-          const cartesRetournees = cartes.filter((carte) =>
-            carte
-              .querySelector(".carte-inner")
-              .classList.contains("est-retournee")
-          );
-
-          if (cartesRetournees.length === cartes.length) {
-            console.log("Victoire ! Toutes les cartes sont retournées !");
-          }
-        } else {
-          setTimeout(() => {
-            carte_inner.classList.remove("est-retournee");
-            premiereCarteRetournee
-              .querySelector(".carte-inner")
-              .classList.remove("est-retournee");
-            premiereCarteRetournee = null;
-            jeuVerrouille = false;
-          }, 1000);
-        }
+        }, 1000);
       }
+    }
   })
 );
 
