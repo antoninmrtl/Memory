@@ -1,0 +1,9 @@
+.ligne {
+  border: outset white 0.2px;
+  box-shadow: 0px 0px 283px 121px rgba(21, 181, 245, 0.72);
+  margin-bottom: 1%;
+}
+
+h1 {
+  font-size: 5rem;
+}

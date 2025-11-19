@@ -2,6 +2,7 @@
 
 const nodeList = document.querySelectorAll(".carte");
 const cartes = Array.from(nodeList);
+let myModal = new bootstrap.Modal(document.getElementById("monModal"));
 
 let imageCss = [
   "/assets/images/image_css/align_items_stretch.png",
@@ -77,7 +78,6 @@ cartes.forEach((carte) =>
       return;
     }
     //compteur pour les shots
-    compteur++;
     console.log(compteur);
     let shot = document.getElementById("coup");
     shot.innerHTML = "<h3>Shots :</h3>&nbsp;&nbsp;&nbsp;" + compteur;
@@ -87,6 +87,7 @@ cartes.forEach((carte) =>
     }
 
     if (premiereCarteRetournee == null) {
+      compteur++;
       premiereCarteRetournee = carte;
       const carte_inner2 = carte.querySelector(".carte-inner");
       carte_inner2.classList.toggle("est-retournee");
@@ -100,6 +101,7 @@ cartes.forEach((carte) =>
       }
       const carte_inner = carte.querySelector(".carte-inner");
       carte_inner.classList.toggle("est-retournee");
+
       jeuVerrouille = true;
       if (premiereCarteRetournee.dataset.paire === carte.dataset.paire) {
         // console.log(premiereCarteRetournee.dataset.paire);
@@ -128,6 +130,9 @@ cartes.forEach((carte) =>
 
         if (cartesRetournees.length === cartes.length) {
           console.log("Victoire ! Toutes les cartes sont retournées !");
+          setTimeout(() => {
+            myModal.show();
+          }, 1500);
           clearInterval(idinterval);
         }
       } else {

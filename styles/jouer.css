@@ -110,6 +110,52 @@ h4 {
   width: 100%;
   height: auto;
 }
+.modal-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #70d7ff;
+}
+
+.modal-content {
+  text-align: center;
+  background-color: black;
+  box-shadow: 0px 0px 43px 21px hsla(197, 100%, 69%, 0.89);
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.btn-sucess {
+  width: 25%;
+  background-color: transparent;
+  border: solid rgb(255, 255, 255) 2px;
+  color: white;
+}
+
+.btn-secondary {
+  width: 25%;
+  background-color: transparent;
+  border: solid white 2px;
+  color: white;
+}
+
+.btn-primary {
+  width: 25%;
+  background-color: transparent;
+  border: solid rgb(0, 212, 240) 2px;
+  color: white;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 800px;
+  }
+}
 
 @media screen and (max-width: 770px) {
   h1,
