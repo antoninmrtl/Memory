@@ -1,9 +1,8 @@
 .information {
+  width: 100%;
   height: 35rem;
   border: solid transparent;
   border-radius: 30px;
-  -webkit-box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
-  -moz-box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
   box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
 }
 
@@ -12,12 +11,11 @@ main {
 }
 
 .choix {
+  width: 100%;
   margin-bottom: 2rem;
   height: 16.5rem;
   border: solid transparent;
   border-radius: 30px;
-  -webkit-box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
-  -moz-box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
   box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
 }
 
@@ -53,4 +51,30 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  h1,
+  h2 {
+    font-size: 2rem;
+  }
+  .information {
+    height: 15rem;
+    width: 80%;
+    margin-bottom: 10%;
+  }
+
+  .choix {
+    margin-top: 5%;
+    margin-bottom: 0;
+    height: 10rem;
+    width: 80%;
+  }
+  .centre {
+    display: flex;
+    justify-content: center;
+  }
+  .btn-success {
+    margin-top: 15%;
+  }
 }

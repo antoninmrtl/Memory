@@ -1,6 +1,7 @@
 // On trouve l'élément avec la classe "carte" et on le garde dans une variable
 
-const cartes = document.querySelectorAll(".carte");
+const nodeList = document.querySelectorAll(".carte");
+const cartes = Array.from(nodeList);
 // const carte = document.querySelector(".carte");
 
 // carte.addEventListener("click", () => {
@@ -10,34 +11,84 @@ const cartes = document.querySelectorAll(".carte");
 
 let premiereCarteRetournee = null;
 let jeuVerrouille = false;
+let compteur = 0;
+let secondes = 0;
+let minutes = 0;
+idinterval = null;
+
+function chronometre() {
+  let chrono = document.getElementById("temps");
+  secondes++;
+  console.log(secondes);
+  if (secondes == 60) {
+    minutes++;
+    console.log(minutes);
+    secondes = 0;
+  }
+  chrono.innerHTML =
+    "<h3>Time :</h3>&nbsp;&nbsp;&nbsp;" + minutes + ":" + secondes;
+}
 
 cartes.forEach((carte) =>
-  carte.addEventListener("click", () => {
-    if (premiereCarteRetournee == null) {
-      premiereCarteRetournee = carte;
-      const carte_inner2 = carte.querySelector(".carte-inner");
-      carte_inner2.classList.toggle("est-retournee");
-    } else {
-      const carte_inner = carte.querySelector(".carte-inner");
-      carte_inner.classList.toggle("est-retournee");
-      jeuVerrouille = true;
-      if (premiereCarteRetournee.dataset.paire === carte.dataset.paire) {
-        premiereCarteRetournee = null;
-        jeuVerrouille = false;
-        fixe();
+  carte.addEventListener("click", (e) => {
+    if (jeuVerrouille) {
+      console.log("CLIC IGNORÉ : Le jeu est verrouillé.");
+      return;
+    }
+    //compteur pour les shots
+    compteur++;
+    console.log(compteur);
+    let shot = document.getElementById("coup");
+    shot.innerHTML = "<h3>Shots :</h3>&nbsp;&nbsp;&nbsp;" + compteur;
+
+    if (idinterval === null) {
+      idinterval = setInterval(chronometre, 1000);
+    }
+
+    if (cartes.length)
+      if (premiereCarteRetournee == null) {
+        premiereCarteRetournee = carte;
+        const carte_inner2 = carte.querySelector(".carte-inner");
+        carte_inner2.classList.toggle("est-retournee");
       } else {
-        setTimeout(() => {
-          carte_inner.classList.remove("est-retournee");
-          premiereCarteRetournee
-            .querySelector(".carte-inner")
-            .classList.remove("est-retournee");
+        const carte_inner = carte.querySelector(".carte-inner");
+        carte_inner.classList.toggle("est-retournee");
+        jeuVerrouille = true;
+        if (premiereCarteRetournee.dataset.paire === carte.dataset.paire) {
           premiereCarteRetournee = null;
           jeuVerrouille = false;
-        }, 1000);
+
+          const cartesRetournees = cartes.filter((carte) =>
+            carte
+              .querySelector(".carte-inner")
+              .classList.contains("est-retournee")
+          );
+
+          if (cartesRetournees.length === cartes.length) {
+            console.log("Victoire ! Toutes les cartes sont retournées !");
+          }
+        } else {
+          setTimeout(() => {
+            carte_inner.classList.remove("est-retournee");
+            premiereCarteRetournee
+              .querySelector(".carte-inner")
+              .classList.remove("est-retournee");
+            premiereCarteRetournee = null;
+            jeuVerrouille = false;
+          }, 1000);
+        }
       }
-    }
   })
 );
+
+// function victoire() {
+//   const cartesRetournees = cartes.filter((carte) =>
+//     carte.classList.contains("est-retournee")
+//   );
+//   if (cartesRetournees.length === cartes.length) {
+//     console.log("Victoire ! Toutes les cartes sont retournées !");
+//   }
+// }
 
 function fixe(event) {
   console.log("Découvert");

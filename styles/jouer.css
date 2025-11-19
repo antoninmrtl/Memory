@@ -87,3 +87,60 @@ h4 {
 .est-retournee {
   background-color: red;
 }
+
+#coup {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 770px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 2rem;
+  }
+  .carte {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 15%;
+  }
+  .material-symbols-outlined {
+    color: #70d7ff;
+    font-size: 1.5rem;
+  }
+  .maborder {
+    margin-top: 30%;
+    width: 85%;
+  }
+  .btn-danger {
+    margin-top: 20%;
+    width: 40%;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 990px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 2rem;
+  }
+  .carte {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 15%;
+  }
+  .material-symbols-outlined {
+    color: #70d7ff;
+    font-size: 1.5rem;
+  }
+  .maborder {
+    margin-top: 10%;
+    width: 85%;
+  }
+  .btn-danger {
+    margin-top: 10%;
+    width: 40%;
+    font-size: 0.9rem;
+  }
+}
