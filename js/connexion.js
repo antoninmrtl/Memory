@@ -1,4 +1,4 @@
-import { estMailExistant, getUtilisateurs } from "./utils.js";
+import { estMailExistant, getUtilisateurs, saveUserConnecte } from "./utils.js";
 
 let submitButton = document.getElementById("monbouton");
 let eyes = document.getElementById("oeil");
@@ -6,6 +6,8 @@ let type = document.getElementById("mdp");
 let myinputMail = document.getElementById("email");
 
 submitButton.addEventListener("click", enrengistrerConnexion);
+myinputMail.addEventListener("keyup", verifconnexionmail);
+type.addEventListener("keyup", verifconnexionmdp);
 
 eyes.addEventListener("click", function () {
   if (eyes.src.includes("on")) {
@@ -18,10 +20,27 @@ eyes.addEventListener("click", function () {
 });
 
 function enrengistrerConnexion() {
-  //   const utilisateurs = getUtilisateurs();
-  //   const dernierutilisateur = utilisateurs[utilisateurs.length - 1];
-  //   const username = dernierutilisateur.username;
-  //   console.log(username);
+  const mail = myinputMail.value;
+  const mdp = type.value;
+  const utilisateurs = getUtilisateurs();
+  const utilisateurTrouve = utilisateurs.find((user) => {
+    return user.email === mail && user.password === mdp;
+  });
+  if (!utilisateurTrouve) {
+    alert("Invalid email or password");
+    return;
+  } else {
+    saveUserConnecte(utilisateurTrouve);
+    document.location.href = "../pages/accueil.html";
+  }
+}
 
-  document.location.href = "../pages/accueil.html";
+function verifconnexionmail() {
+  let result = myinputMail.value;
+  console.log(result);
+}
+
+function verifconnexionmdp() {
+  let result = type.value;
+  console.log(result);
 }

@@ -1,8 +1,7 @@
-import { getUtilisateurs } from "./utils.js";
+import { getUserConnecte, getUtilisateurs } from "./utils.js";
 let myName = document.getElementById("Nameuser");
 
-const utilisateurs = getUtilisateurs();
-const dernierutilisateur = utilisateurs[utilisateurs.length - 1];
-const username = dernierutilisateur.username;
+const userConnecte = getUserConnecte();
+const nameUser = userConnecte;
 
-myName.innerHTML = username;
+myName.innerHTML = nameUser;
