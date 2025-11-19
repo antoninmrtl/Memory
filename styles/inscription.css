@@ -31,8 +31,16 @@ label {
   text-align: center;
   margin-bottom: 2%;
 }
+
 #mdp {
   width: 90%;
+}
+
+#oeil {
+  filter: invert();
+  width: 5%;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 .btn-success,

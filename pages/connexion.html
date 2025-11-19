@@ -59,8 +59,9 @@
                     />
                   </div>
                   <br />
-                  <div class="centre">
-                    <label for="mdp">Password* :</label>
+
+                  <div class="pwd">
+                    <label for="mdp" class="centre">Password* :</label>
                     <input
                       required
                       type="password"
@@ -70,6 +71,12 @@
                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       title="Saisissez un mot de passe de minimum 8 caractères 
         comportant des lettres minuscules et majuscules et des chiffres"
+                    />
+
+                    <img
+                      id="oeil"
+                      src="../assets/images/mdp/visibility_on.png"
+                      alt="oeil ouvert"
                     />
                   </div>
                 </form>
@@ -93,5 +100,6 @@
         <a class="politiques" href="/pages/politiques.html"> Privacy Policy</a>
       </ul>
     </footer>
+    <script src="/js/verificationMdp.js"></script>
   </body>
 </html>
