@@ -1,3 +1,9 @@
+import {
+  getUtilisateurs,
+  saveUtilisateurs,
+  estUtilisateurExistant,
+} from "./utils.js";
+
 let eyes = document.getElementById("oeil");
 let type = document.getElementById("mdp");
 let maj = document.getElementById("Majuscule");
@@ -114,17 +120,25 @@ function activerBouton() {
 setInterval(activerBouton, 100);
 
 function enrengistrerMdp() {
-  localStorage.setItem("Username", myinputUser.value);
-  localStorage.setItem("email", myinputMail.value);
-  localStorage.setItem("Password", myinput.value);
-
-  let username = localStorage.getItem("Username");
-  let mail = localStorage.getItem("email");
-  let password = localStorage.getItem("mdp");
-  console.log("email enregistré : " + mail);
-  console.log("mot de passe enregistré : " + password);
-  console.log("mot de passe enregistré : " + username);
-  document.location.href = "../pages/connection.html";
+  const username = myinputUser.value;
+  const email = myinputMail.value;
+  const password = myinput.value;
+  if (!username || !email || !password) {
+    console.log(
+      "enrengistrerMdp - Erreur: Champs vides. Impossible de sauvegarder."
+    );
+    alert("Veuillez remplir tous les champs avant de soumettre !");
+    return;
+  }
+  const nouvelUtilisateur = {
+    username: username,
+    email: email,
+    password: password,
+  };
+  const utilisateurs = getUtilisateurs();
+  utilisateurs.push(nouvelUtilisateur);
+  saveUtilisateurs(utilisateurs);
+  document.location.href = "../pages/connexion.html";
 }
 
 function verifmail() {

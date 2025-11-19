@@ -1,4 +1,8 @@
-let myusername = localStorage.getItem("Username");
+import { getUtilisateurs } from "./utils.js";
 let myName = document.getElementById("Nameuser");
 
-myName.innerHTML = myusername;
+const utilisateurs = getUtilisateurs();
+const dernierutilisateur = utilisateurs[utilisateurs.length - 1];
+const username = dernierutilisateur.username;
+
+myName.innerHTML = username;
