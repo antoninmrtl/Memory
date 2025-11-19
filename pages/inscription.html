@@ -112,10 +112,24 @@
                     />
                   </div>
                 </form>
-
+                <div
+                  class="condition d-flex flex-row text-center justify-content-around"
+                >
+                  <h5 class="nosucced" id="Majuscule">Majuscule</h5>
+                  <h5 class="nosucced" id="Minuscule">Minuscule</h5>
+                  <h5 class="nosucced" id="Chiffre">Chiffre</h5>
+                  <h5 class="nosucced" id="caractere">8 caractères minimum</h5>
+                </div>
                 <h5>* : Obligatory</h5>
                 <section class="d-flex justify-content-around">
-                  <button type="submit" class="btn btn-success">Submit</button>
+                  <button
+                    id="monbouton"
+                    type="submit"
+                    class="btn btn-success"
+                    disabled
+                  >
+                    Submit
+                  </button>
                   <button type="reset" class="btn btn-danger">Reset</button>
                 </section>
               </fieldset>
