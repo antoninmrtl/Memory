@@ -1,8 +1,4 @@
-import {
-  getUtilisateurs,
-  saveUtilisateurs,
-  estUtilisateurExistant,
-} from "./utils.js";
+import { getUtilisateurs, saveUtilisateurs, estMailExistant } from "./utils.js";
 
 let eyes = document.getElementById("oeil");
 let type = document.getElementById("mdp");
@@ -33,10 +29,12 @@ let les2mdps = false;
 let mdpFort = false;
 let mailBon = false;
 let userBon = false;
+let emailExists = false;
 
 bouton.addEventListener("click", enrengistrerMdp);
 myinput.addEventListener("keyup", verifMdp);
 confirme.addEventListener("keyup", confirmMdp);
+myinputMail.addEventListener("keyup", verifconnexionmail);
 
 eyes.addEventListener("click", function () {
   if (eyes.src.includes("on")) {
@@ -111,7 +109,7 @@ function confirmMdp() {
 function activerBouton() {
   verifmail();
   verifusername();
-  if (mdpFort && les2mdps && mailBon && userBon) {
+  if (mdpFort && les2mdps && mailBon && userBon && !emailExists) {
     bouton.removeAttribute("disabled");
   } else {
     bouton.setAttribute("disabled", "disabled");
@@ -147,7 +145,7 @@ function verifmail() {
     myMessageerreur.innerHTML = "";
   } else {
     mailBon = false;
-    myMessageerreur.innerHTML = "Email non valide";
+    myMessageerreur.innerHTML = "Invalid emails";
   }
 }
 
@@ -157,7 +155,7 @@ function verifusername() {
     myMessageerreur2.innerHTML = "";
   } else {
     userBon = false;
-    myMessageerreur2.innerHTML = "Username non valide (min 3 caractères)";
+    myMessageerreur2.innerHTML = "Invalid username (minimum 3 characters)";
   }
 }
 
@@ -174,5 +172,16 @@ function miseAJourBarre(scoreCalculé) {
     barrePourcentage.classList.add("bg-info");
   } else {
     barrePourcentage.classList.add("bg-success");
+  }
+}
+
+function verifconnexionmail() {
+  // console.log(myinputMail.value);
+  if (estMailExistant(myinputMail.value)) {
+    alert("Email exists, log in");
+    emailExists = true;
+  } else {
+    emailExists = false;
+    console.log("email bon");
   }
 }
