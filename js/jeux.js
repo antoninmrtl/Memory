@@ -12,6 +12,15 @@ let imageCss = [
   "/assets/images/image_css/flex_no_wrap.png",
 ];
 
+let titreCss = [
+  "align_items_stretch",
+  "align_flex_end",
+  "align_flex_start",
+  "code_blocks",
+  "css",
+  "flex_no_wrap",
+];
+
 let premiereCarteRetournee = null;
 let jeuVerrouille = false;
 let compteur = 0;
@@ -20,16 +29,31 @@ let minutes = 0;
 let stockage = [];
 idinterval = null;
 
+let tableauTitre = titreCss.concat(titreCss);
 let tableauJeu = imageCss.concat(imageCss);
 tableauJeu.sort(() => 0.5 - Math.random());
 
 for (let i = 0; i < cartes.length; i++) {
   let carte = cartes[i];
+  let result = tableauJeu[i];
   let img = carte.querySelector(".carte-verso img");
-
+  let titre = carte.querySelector(".carte-verso h4");
   if (img) {
-    img.src = tableauJeu[i];
+    img.src = result;
     carte.dataset.paire = tableauJeu[i];
+  }
+  if (result.includes("stretch")) {
+    titre.innerHTML = tableauTitre[0];
+  } else if (result.includes("end")) {
+    titre.innerHTML = tableauTitre[1];
+  } else if (result.includes("start")) {
+    titre.innerHTML = tableauTitre[2];
+  } else if (result.includes("blocks")) {
+    titre.innerHTML = tableauTitre[3];
+  } else if (result.includes("css.png")) {
+    titre.innerHTML = tableauTitre[4];
+  } else if (result.includes("no_wrap")) {
+    titre.innerHTML = tableauTitre[5];
   }
 }
 

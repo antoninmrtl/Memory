@@ -40,6 +40,7 @@
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   color: black;
 }
 
@@ -94,8 +95,20 @@ h4 {
   font-size: 1.8rem;
 }
 
+.carte-verso h4 {
+  text-align: center;
+  word-break: break-all;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
 .bloque-clic {
   pointer-events: none;
+}
+
+.img {
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 770px) {
