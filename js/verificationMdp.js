@@ -9,6 +9,7 @@ let confirme = document.getElementById("mdp2");
 let user = document.getElementById("username");
 let mail = document.getElementById("email");
 let myMessageerreur = document.getElementById("message");
+let barrePourcentage = document.getElementById("pourcentage");
 
 let myinputUser = document.getElementById("username");
 let myinputMail = document.getElementById("email");
@@ -37,9 +38,11 @@ eyes.addEventListener("click", function () {
 });
 
 function verifMdp() {
+  let score = 0;
   if (myinput.value.match(patternmaj)) {
     maj.classList.remove("nosucced");
     maj.classList.add("succed");
+    score += 25;
   } else {
     maj.classList.remove("succed");
     maj.classList.add("nosucced");
@@ -47,6 +50,7 @@ function verifMdp() {
   if (myinput.value.match(patternmin)) {
     min.classList.remove("nosucced");
     min.classList.add("succed");
+    score += 25;
   } else {
     min.classList.remove("succed");
     min.classList.add("nosucced");
@@ -54,6 +58,7 @@ function verifMdp() {
   if (myinput.value.match(patternnbr)) {
     nbr.classList.remove("nosucced");
     nbr.classList.add("succed");
+    score += 25;
   } else {
     nbr.classList.remove("succed");
     nbr.classList.add("nosucced");
@@ -61,10 +66,13 @@ function verifMdp() {
   if (myinput.value.match(patternlongueur)) {
     longueur.classList.remove("nosucced");
     longueur.classList.add("succed");
+    score += 25;
   } else {
     longueur.classList.remove("succed");
     longueur.classList.add("nosucced");
   }
+  miseAJourBarre(score);
+
   if (myinput.value.match(tout)) {
     mdpFort = true;
   } else {
@@ -112,5 +120,21 @@ function verifmail() {
   } else {
     mailBon = false;
     myMessageerreur.innerHTML = "Email non valide";
+  }
+}
+
+function miseAJourBarre(scoreCalculé) {
+  barrePourcentage.style.width = scoreCalculé + "%";
+  barrePourcentage.innerText = scoreCalculé + "%";
+  barrePourcentage.className = "progress-bar progress-bar-striped";
+
+  if (scoreCalculé < 25) {
+    barrePourcentage.classList.add("bg-danger");
+  } else if (scoreCalculé < 50) {
+    barrePourcentage.classList.add("bg-warning");
+  } else if (scoreCalculé < 100) {
+    barrePourcentage.classList.add("bg-info");
+  } else {
+    barrePourcentage.classList.add("bg-success");
   }
 }
