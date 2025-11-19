@@ -145,7 +145,7 @@ cartes.forEach((carte) =>
               "<h3>Shots :</h3>&nbsp;&nbsp;&nbsp;" + resultCompteur;
             console.log("Victoire ! Toutes les cartes sont retournées !");
             myModal.show();
-          }, 1500);
+          }, 1000);
           clearInterval(idinterval);
         }
       } else {
