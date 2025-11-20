@@ -207,4 +207,10 @@ function enrengistrerStats() {
   const scoreboards = getScoreboards();
   scoreboards.push(nouveauScoreboard);
   saveScoreboard(scoreboards);
+
+  while (scoreboards.length > 6) {
+    scoreboards.shift();
+  }
+
+  saveScoreboard(scoreboards);
 }
