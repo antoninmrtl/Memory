@@ -31,7 +31,7 @@ function enrengistrerConnexion() {
     myForm.classList.add("shake-animation");
     setTimeout(() => {
       myForm.classList.remove("shake-animation");
-    }, 1000);
+    }, 1200);
 
     // alert("Invalid email or password");
 

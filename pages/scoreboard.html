@@ -14,9 +14,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/styles/style.css" />
-    <link rel="stylesheet" href="/styles/accueil.css" />
-    <!-- <link rel="stylesheet" href="/styles/blakhole.css" /> -->
-    <title>Mymo acceuil</title>
+    <link rel="stylesheet" href="/styles/scoreboard.css" />
+
+    <title>Mymo Scoreboard</title>
   </head>
   <body>
     <header>
@@ -44,15 +44,11 @@
                         >account_circle</span
                       ></a
                     >
-                    <a href="/pages/accueil.html" id="en-cours"> Home</a>
+                    <a href="/pages/accueil.html"> Home</a>
                     <a href="/pages/jouer.html">Play</a>
                     <a href="/pages/about.html"> About me</a>
-                    <a href="/pages/inscription.html" id="sign">Sign up</a>
-                    <a href="/pages/connexion.html" id="sign2">Sign in</a>
-                    <a href="/pages/scoreboard.html" id="scoreboard"
-                      >Scoreboard</a
-                    >
-                    <a href="/pages/scoreboard.html" id="signout">Sign out</a>
+                    <a href="/pages/inscription.html">sign up</a>
+                    <a href="/pages/connexion.html">sign in</a>
                   </ul>
                 </div>
               </div>
@@ -61,28 +57,60 @@
         </div>
       </nav>
     </header>
-    <hr />
     <main>
-      <section class="bienvenue">
-        <h2>Welcome back</h2>
-        <h1 id="Nameuser" class="neon">Antonin</h1>
-      </section>
-      <section class="selection">
-        <ul>
-          <li>
-            <a href="/pages/jouer.html" class="navlien">&lt;Play&gt;</a>
-          </li>
-          <li>
-            <a href="/pages/regles.html" class="navlien">&lt;Rules&gt;</a>
-          </li>
-          <li>
-            <a href="/pages/about.html" class="navlien">&lt;About me&gt;</a>
-          </li>
-        </ul>
-      </section>
+      <h1 class="d-flex justify-content-center">Scoreboard</h1>
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-12 centre d-flex flex-row justify-content-between m-3"
+          >
+            <section class="information">
+              <form class="text-center">
+                <h1 class="text-center">Best Score</h1>
+                <div class="d-flex flex-row justify-content-between flex-wrap">
+                  <div class="d-flex p-2">
+                    <label for="username">Username</label>
+                    <h3 id="user"></h3>
+                  </div>
+                  <div class="d-flex p-2 border">
+                    <label for="email">Score</label>
+                    <h3 id="email"></h3>
+                  </div>
+                  <div class="d-flex p-2 border">
+                    <label for="mdp">Shots</label>
+                    <h3 id="mdp" type="password"></h3>
+                  </div>
+                  <div class="d-flex p-2">
+                    <label for="mdp">Time</label>
+                    <h3 id="mdp" type="password"></h3>
+                  </div>
+                  <div class="d-flex p-2">
+                    <label for="mdp">Memory size </label>
+                    <h3 id="mdp" type="password"></h3>
+                  </div>
+                  <div class="d-flex p-2">
+                    <label for="mdp">Memory Choice </label>
+                    <h3 id="mdp" type="password"></h3>
+                  </div>
+                  <div class="d-flex p-2">
+                    <label for="mdp">Date </label>
+                    <h3 id="mdp" type="password"></h3>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success" id="bouton">
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
-      <div class="ligne"></div>
       <ul class="d-flex justify-content-around text-center">
         <a class="mentions" href="/pages/mentions.html"> legal notices</a>
         <a class="logo neon" href="/pages/index.html">Mymo</a>
@@ -94,6 +122,5 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/acceuil.js" type="module" defer></script>
   </body>
 </html>

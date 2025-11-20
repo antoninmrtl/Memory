@@ -7,16 +7,7 @@
 }
 
 main {
-  margin-top: 5%;
-}
-
-.choix {
-  width: 100%;
-  margin-bottom: 2rem;
-  height: 16.5rem;
-  border: solid transparent;
-  border-radius: 30px;
-  box-shadow: 0px 0px 143px 21px rgba(21, 181, 245, 0.72);
+  margin-top: 1%;
 }
 
 .centre {
@@ -40,7 +31,13 @@ main {
   width: 30%;
   border-radius: 30px;
   background-color: transparent;
-  border: solid green 2px;
+  border: solid rgb(0, 219, 248) 2px;
+}
+
+.btn-success:hover {
+  background-color: rgb(0, 219, 248);
+  color: black;
+  transition: 0.3s;
 }
 
 .label1 {
@@ -77,30 +74,4 @@ h5:hover {
   opacity: 1;
   color: white;
   transition: 0.3s;
-}
-
-@media screen and (max-width: 750px) {
-  h1,
-  h2 {
-    font-size: 2rem;
-  }
-  .information {
-    height: 15rem;
-    width: 80%;
-    margin-bottom: 10%;
-  }
-
-  .choix {
-    margin-top: 5%;
-    margin-bottom: 0;
-    height: 10rem;
-    width: 80%;
-  }
-  .centre {
-    display: flex;
-    justify-content: center;
-  }
-  .btn-success {
-    margin-top: 15%;
-  }
 }
