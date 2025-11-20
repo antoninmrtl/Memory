@@ -97,10 +97,10 @@
                 >
                   <option selected disabled>Open the selection menu</option>
                   <option value="Html">Html</option>
-                  <option value="Css">Css</option>
+                  <option selected="selected" value="Css">Css</option>
                   <option value="Javascript">Javascript</option>
                   <option value="Animals">Animals</option>
-                  <option value="other">Other</option>
+                  <!-- <option value="other">Other</option> -->
                 </select>
               </form>
             </section>
@@ -108,19 +108,19 @@
               <h2 class="text-center">Memory size</h2>
               <form class="text-center">
                 <label for="choixMemory" class="form-label label1"
-                  >Choose a theme</label
+                  >Choose a size</label
                 >
                 <select
                   class="form-select sizeInput"
-                  id="choixMemory"
+                  id="choixSizeMemory"
                   aria-label="Choix du memory"
                 >
                   <option selected disabled>Open the selection menu</option>
-                  <option value="Html">Html</option>
-                  <option value="Css">Css</option>
-                  <option value="Javascript">Javascript</option>
-                  <option value="Animals">Animals</option>
-                  <option value="other">Other</option>
+                  <option selected="selected" value="4-3">4-3</option>
+                  <option value="6-4">6-4</option>
+                  <option value="3-3">3-3</option>
+                  <option value="4-4">4-4</option>
+                  <option value="5-3">5-3</option>
                 </select>
               </form>
             </section>
@@ -128,7 +128,9 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" id="bouton">
+              Submit
+            </button>
           </div>
         </div>
       </div>

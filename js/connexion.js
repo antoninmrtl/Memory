@@ -4,6 +4,7 @@ let submitButton = document.getElementById("monbouton");
 let eyes = document.getElementById("oeil");
 let type = document.getElementById("mdp");
 let myinputMail = document.getElementById("email");
+let myForm = document.getElementById("monform");
 
 submitButton.addEventListener("click", enrengistrerConnexion);
 myinputMail.addEventListener("keyup", verifconnexionmail);
@@ -27,7 +28,13 @@ function enrengistrerConnexion() {
     return user.email === mail && user.password === mdp;
   });
   if (!utilisateurTrouve) {
-    alert("Invalid email or password");
+    myForm.classList.add("shake-animation");
+    setTimeout(() => {
+      myForm.classList.remove("shake-animation");
+    }, 1000);
+
+    // alert("Invalid email or password");
+
     return;
   } else {
     saveUserConnecte(utilisateurTrouve);
