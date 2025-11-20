@@ -47,8 +47,15 @@
                     <a href="/pages/accueil.html"> Home</a>
                     <a href="/pages/jouer.html">Play</a>
                     <a href="/pages/about.html"> About me</a>
-                    <a href="/pages/inscription.html">sign up</a>
-                    <a href="/pages/connexion.html">sign in</a>
+                    <a href="/pages/inscription.html" id="sign">Sign up</a>
+                    <a href="/pages/connexion.html " id="sign2">Sign in</a>
+                    <a
+                      href="/pages/scoreboard.html"
+                      id="scoreboard"
+                      class="en-cours"
+                      >Scoreboard</a
+                    >
+                    <a href="/pages/scoreboard.html" id="signout">Sign out</a>
                   </ul>
                 </div>
               </div>
@@ -64,40 +71,323 @@
           <div
             class="col-md-12 centre d-flex flex-row justify-content-between m-3"
           >
-            <section class="information">
-              <form class="text-center">
-                <h1 class="text-center">Best Score</h1>
-                <div class="d-flex flex-row justify-content-between flex-wrap">
-                  <div class="d-flex p-2">
-                    <label for="username">Username</label>
-                    <h3 id="user"></h3>
+            <section class="information container mt-5">
+              <div class="scoreboard">
+                <!-- <h1 class="text-center mb-4 neon">Best Score</h1> -->
+
+                <div class="row g-3 border-bottom mt-3">
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Username</h2>
+                      <!-- test rendu avec des données -->
+                      <!-- <h3 id="score-user" class="stat-value">Antonin</h3> -->
+                    </div>
                   </div>
-                  <div class="d-flex p-2 border">
-                    <label for="email">Score</label>
-                    <h3 id="email"></h3>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Score</h2>
+                      <!-- <h3 id="score-points" class="stat-value">1500</h3> -->
+                    </div>
                   </div>
-                  <div class="d-flex p-2 border">
-                    <label for="mdp">Shots</label>
-                    <h3 id="mdp" type="password"></h3>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Shots</h2>
+                      <!-- <h3 id="score-shots" class="stat-value">12</h3> -->
+                    </div>
                   </div>
-                  <div class="d-flex p-2">
-                    <label for="mdp">Time</label>
-                    <h3 id="mdp" type="password"></h3>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Time</h2>
+                      <!-- <h3 id="score-time" class="stat-value">01:20</h3> -->
+                    </div>
                   </div>
-                  <div class="d-flex p-2">
-                    <label for="mdp">Memory size </label>
-                    <h3 id="mdp" type="password"></h3>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Size</h2>
+                      <!-- <h3 id="score-size" class="stat-value">4x4</h3> -->
+                    </div>
                   </div>
-                  <div class="d-flex p-2">
-                    <label for="mdp">Memory Choice </label>
-                    <h3 id="mdp" type="password"></h3>
-                  </div>
-                  <div class="d-flex p-2">
-                    <label for="mdp">Date </label>
-                    <h3 id="mdp" type="password"></h3>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Date</h2>
+                      <!-- <h3 id="score-date" class="stat-value">24/10/2023</h3> -->
+                    </div>
                   </div>
                 </div>
-              </form>
+              </div>
+
+               <div class="row g-3 border-bottom mt-3">
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Username</h2>
+                      <!-- test rendu avec des données -->
+                      <!-- <h3 id="score-user" class="stat-value">Antonin</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Score</h2>
+                      <!-- <h3 id="score-points" class="stat-value">1500</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Shots</h2>
+                      <!-- <h3 id="score-shots" class="stat-value">12</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Time</h2>
+                      <!-- <h3 id="score-time" class="stat-value">01:20</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Size</h2>
+                      <!-- <h3 id="score-size" class="stat-value">4x4</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Date</h2>
+                      <!-- <h3 id="score-date" class="stat-value">24/10/2023</h3> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-3 border-bottom mt-3">
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Username</h2>
+                      <!-- test rendu avec des données -->
+                      <!-- <h3 id="score-user" class="stat-value">Antonin</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Score</h2>
+                      <!-- <h3 id="score-points" class="stat-value">1500</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Shots</h2>
+                      <!-- <h3 id="score-shots" class="stat-value">12</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Time</h2>
+                      <!-- <h3 id="score-time" class="stat-value">01:20</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Size</h2>
+                      <!-- <h3 id="score-size" class="stat-value">4x4</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Date</h2>
+                      <!-- <h3 id="score-date" class="stat-value">24/10/2023</h3> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 border-bottom mt-3">
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Username</h2>
+                      <!-- test rendu avec des données -->
+                      <!-- <h3 id="score-user" class="stat-value">Antonin</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Score</h2>
+                      <!-- <h3 id="score-points" class="stat-value">1500</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Shots</h2>
+                      <!-- <h3 id="score-shots" class="stat-value">12</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Time</h2>
+                      <!-- <h3 id="score-time" class="stat-value">01:20</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Size</h2>
+                      <!-- <h3 id="score-size" class="stat-value">4x4</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Date</h2>
+                      <!-- <h3 id="score-date" class="stat-value">24/10/2023</h3> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 border-bottom mt-3">
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Username</h2>
+                      <!-- test rendu avec des données -->
+                      <!-- <h3 id="score-user" class="stat-value">Antonin</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Score</h2>
+                      <!-- <h3 id="score-points" class="stat-value">1500</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Shots</h2>
+                      <!-- <h3 id="score-shots" class="stat-value">12</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Time</h2>
+                      <!-- <h3 id="score-time" class="stat-value">01:20</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Size</h2>
+                      <!-- <h3 id="score-size" class="stat-value">4x4</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Date</h2>
+                      <!-- <h3 id="score-date" class="stat-value">24/10/2023</h3> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 border-bottom mt-3">
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Username</h2>
+                      <!-- test rendu avec des données -->
+                      <!-- <h3 id="score-user" class="stat-value">Antonin</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Score</h2>
+                      <!-- <h3 id="score-points" class="stat-value">1500</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Shots</h2>
+                      <!-- <h3 id="score-shots" class="stat-value">12</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Time</h2>
+                      <!-- <h3 id="score-time" class="stat-value">01:20</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Size</h2>
+                      <!-- <h3 id="score-size" class="stat-value">4x4</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Date</h2>
+                      <!-- <h3 id="score-date" class="stat-value">24/10/2023</h3> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-3 border-bottom mt-3">
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Username</h2>
+                      <!-- test rendu avec des données -->
+                      <!-- <h3 id="score-user" class="stat-value">Antonin</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Score</h2>
+                      <!-- <h3 id="score-points" class="stat-value">1500</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Shots</h2>
+                      <!-- <h3 id="score-shots" class="stat-value">12</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Time</h2>
+                      <!-- <h3 id="score-time" class="stat-value">01:20</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Size</h2>
+                      <!-- <h3 id="score-size" class="stat-value">4x4</h3> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-6">
+                    <div class="stat-box">
+                      <h2 class="stat-label">Date</h2>
+                      <!-- <h3 id="score-date" class="stat-value">24/10/2023</h3> -->
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
             </section>
           </div>
         </div>
@@ -117,6 +407,8 @@
         <a class="politiques" href="/pages/politiques.html"> Privacy Policy</a>
       </ul>
     </footer>
+    <script type="module" src="/js/utils.js" defer></script>
+    <script src="/js/scoreboard.js" type="module" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

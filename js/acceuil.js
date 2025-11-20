@@ -6,14 +6,13 @@ let mySignout = document.getElementById("signout");
 let myScoreboard = document.getElementById("scoreboard");
 
 const userConnecte = getUserConnecte();
-const nameUser = userConnecte;
 
-myName.innerHTML = nameUser;
+myName.innerHTML = userConnecte;
 
 myScoreboard.classList.add("d-none");
 mySignout.classList.add("d-none");
 
-if (nameUser != null) {
+if (userConnecte != null) {
   mySign.classList.add("d-none");
   mySign2.classList.add("d-none");
   mySignout.classList.remove("d-none");

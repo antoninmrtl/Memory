@@ -1,3 +1,4 @@
+import { getScoreboards, getUserConnecte, saveScoreboard } from "./utils.js";
 // On trouve l'élément avec la classe "carte" et on le garde dans une variable
 
 const nodeList = document.querySelectorAll(".carte");
@@ -28,7 +29,8 @@ let compteur = 0;
 let secondes = 0;
 let minutes = 0;
 let stockage = [];
-idinterval = null;
+let aujourdhui = new Date();
+let idinterval = null;
 
 let tableauTitre = titreCss.concat(titreCss);
 let tableauJeu = imageCss.concat(imageCss);
@@ -130,10 +132,11 @@ cartes.forEach((carte) =>
 
         if (cartesRetournees.length === cartes.length) {
           console.log("Victoire ! Toutes les cartes sont retournées !");
+          enrengistrerStats();
           setTimeout(() => {
-            let resultCompteur = compteur;
-            let resultMinutes = minutes;
-            let resultSecondes = secondes;
+            const resultCompteur = compteur;
+            const resultMinutes = minutes;
+            const resultSecondes = secondes;
             let shotResult = document.getElementById("coup2");
             let timeResult = document.getElementById("temps2");
             timeResult.innerHTML =
@@ -179,3 +182,29 @@ document.addEventListener("keyup", function (e) {
     }
   }
 });
+
+let sizememo = localStorage.getItem("userSizeMemoryConnecte");
+let userCo = getUserConnecte();
+
+function enrengistrerStats() {
+  const shots = compteur;
+  const formattedMin = minutes < 10 ? "0" + minutes : minutes;
+  const formattedSec = secondes < 10 ? "0" + secondes : secondes;
+  const time = formattedMin + ":" + formattedSec;
+  const dateObj = new Date();
+  const date = dateObj.toLocaleDateString("fr-FR");
+  const size = sizememo;
+  const username = userCo;
+  console.log(username);
+  const nouveauScoreboard = {
+    username: username,
+    score: shots,
+    shots: shots,
+    time: time,
+    size: size,
+    date: date,
+  };
+  const scoreboards = getScoreboards();
+  scoreboards.push(nouveauScoreboard);
+  saveScoreboard(scoreboards);
+}

@@ -46,8 +46,12 @@
                     <a href="/pages/accueil.html"> Home</a>
                     <a href="/pages/jouer.html" id="en-cours">Play</a>
                     <a href="/pages/about.html"> About me</a>
-                    <a href="/pages/inscription.html">sign up</a>
-                    <a href="/pages/connexion.html">sign in</a>
+                    <a href="/pages/inscription.html" id="sign">Sign up</a>
+                    <a href="/pages/connexion.html" id="sign2">Sign in</a>
+                    <a href="/pages/scoreboard.html" id="scoreboard"
+                      >Scoreboard</a
+                    >
+                    <a href="/pages/accueil.html" id="signout">Sign out</a>
                   </ul>
                 </div>
               </div>
@@ -309,7 +313,9 @@
             <div class="modal-footer d-flex justify-content-between">
               <a href="/pages/accueil.html" class="btn btn-secondary">Home</a>
               <a href="/pages/jouer.html" class="btn btn-primary">Play again</a>
-              <a href="/pages/scoreboard" class="btn btn-sucess">Scoreboard</a>
+              <a href="/pages/scoreboard.html" class="btn btn-sucess"
+                >Scoreboard</a
+              >
             </div>
           </div>
         </div>
@@ -328,6 +334,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/jeux.js"></script>
+    <script type="module" src="/js/jeux.js" defer></script>
+    <script type="module" src="/js/utils.js" defer></script>
   </body>
 </html>
