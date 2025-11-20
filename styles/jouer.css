@@ -186,6 +186,9 @@ p {
   h3 {
     font-size: 2rem;
   }
+  h4 {
+    display: none;
+  }
   .carte {
     width: 3rem;
     height: 3rem;
