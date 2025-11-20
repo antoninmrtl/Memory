@@ -8,12 +8,24 @@ export function getUserConnecte() {
   return userConnecteJSON ? JSON.parse(userConnecteJSON) : null;
 }
 
+export function getMailConnecte() {
+  const mailConnecteJson = localStorage.getItem("userMailConnecte");
+  return mailConnecteJson ? JSON.parse(mailConnecteJson) : null;
+}
+
+export function getMdpConnecte() {
+  const mdpConnecteJson = localStorage.getItem("userMdpConnecte");
+  return mdpConnecteJson ? JSON.parse(mdpConnecteJson) : null;
+}
+
 export function saveUtilisateurs(utilisateurs) {
   localStorage.setItem("utilisateurs", JSON.stringify(utilisateurs));
 }
 
 export function saveUserConnecte(utilisateur) {
   localStorage.setItem("userConnecte", JSON.stringify(utilisateur.username));
+  localStorage.setItem("userMailConnecte", JSON.stringify(utilisateur.email));
+  localStorage.setItem("userMdpConnecte", JSON.stringify(utilisateur.password));
 }
 
 export function estUsernameExistant(username) {

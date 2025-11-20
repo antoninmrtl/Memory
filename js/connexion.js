@@ -31,7 +31,7 @@ function enrengistrerConnexion() {
     return;
   } else {
     saveUserConnecte(utilisateurTrouve);
-    document.location.href = "../pages/accueil.html";
+    document.location.href = "../pages/profile.html";
   }
 }
 

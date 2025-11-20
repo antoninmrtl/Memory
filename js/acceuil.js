@@ -1,4 +1,4 @@
-import { getUserConnecte, getUtilisateurs } from "./utils.js";
+import { getUserConnecte } from "./utils.js";
 let myName = document.getElementById("Nameuser");
 
 const userConnecte = getUserConnecte();
