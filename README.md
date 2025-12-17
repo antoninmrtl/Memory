@@ -66,16 +66,6 @@ Manipulation des classes CSS (element.classList.toggle, .remove).
 
 Ce projet ne nécessite aucune installation ni dépendance.
 
-Clonez ce dépôt sur votre machine locale :
-
-Bash
-
-git clone [URL-DE-VOTRE-REPO-GITHUB]
-Naviguez dans le dossier du projet :
-
-Bash
-
-cd [NOM-DU-DOSSIER]
-Ouvrez le fichier index.html directement dans votre navigateur web (Chrome, Firefox, Edge, etc.).
+Clonez ce dépôt sur votre machine locale 
 
 Et voilà, vous pouvez jouer !
